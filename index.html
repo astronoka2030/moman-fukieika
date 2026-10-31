@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>富貴栄華 モードデータまとめ</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="container">
+    <h1>富貴栄華 データデータベース</h1>
+
+    <div class="tabs">
+      <button class="tab-button active" data-target="state-section">州の投資額</button>
+      <button class="tab-button" data-target="village-section">村の投資額</button>
+      <button class="tab-button" data-target="county-section">郡の投資額</button>
+      <button class="tab-button" data-target="title-section">称号（抜擢条件）</button>
+      <button class="tab-button" data-target="vehicle-section">乗り物</button>
+    </div>
+
+    <!-- 州の投資額 -->
+    <section id="state-section" class="content-section active">
+      <h2>州の投資額・ステータス一覧</h2>
+      <div id="state-table-container"></div>
+    </section>
+
+    <!-- 村の投資額 -->
+    <section id="village-section" class="content-section">
+      <h2>村の投資額・ステータス一覧</h2>
+      <div id="village-table-container"></div>
+    </section>
+
+    <!-- 郡の投資額 -->
+    <section id="county-section" class="content-section">
+      <h2>郡の投資額・ステータス一覧</h2>
+      <div id="county-table-container"></div>
+    </section>
+
+    <!-- 称号 -->
+    <section id="title-section" class="content-section">
+      <h2>称号・抜擢条件一覧</h2>
+      <div id="title-table-container"></div>
+    </section>
+
+    <!-- 乗り物 -->
+    <section id="vehicle-section" class="content-section">
+      <h2>乗り物 昇級費・ステータス</h2>
+      <div id="vehicle-upgrade-table"></div>
+
+      <h2 class="sub-title">乗り物 改造費</h2>
+      <div id="vehicle-mod-table"></div>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
