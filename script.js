@@ -1,17 +1,15 @@
 document.addEventListener('DOMContentLoaded', () => {
-  // JSONデータの読み込みと初期化
   fetch('data.json')
     .then(response => response.json())
     .then(data => {
-      renderStateTable(data.stateData);
       renderVillageTable(data.villageData);
       renderCountyTable(data.countyData);
+      renderStateTable(data.stateData);
       renderTitleTable(data.titleData);
       renderVehicleTables(data.vehicleUpgradeData, data.vehicleModData);
     })
     .catch(error => console.error('データ取得エラー:', error));
 
-  // タブ切り替え機能
   const tabButtons = document.querySelectorAll('.tab-button');
   const sections = document.querySelectorAll('.content-section');
 
@@ -28,25 +26,11 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-function renderStateTable(data) {
-  const container = document.getElementById('state-table-container');
-  let html = `<table><thead><tr><th>占有率</th><th>配当</th><th>評判</th><th>機縁</th><th>次Lv必要金額</th><th>累計必要金額</th></tr></thead><tbody>`;
-  data.forEach(item => {
-    const estClass = item.isEstimated ? 'class="estimated"' : '';
-    const badge = item.isEstimated ? '<span class="badge-estimated">補完</span>' : '';
-    html += `<tr ${estClass}><td>${item.percent}${badge}</td><td>${item.dividend}</td><td>${item.reputation}</td><td>${item.kizen}</td><td>${item.cost}</td><td>${item.totalCost}</td></tr>`;
-  });
-  html += `</tbody></table>`;
-  container.innerHTML = html;
-}
-
 function renderVillageTable(data) {
   const container = document.getElementById('village-table-container');
   let html = `<table><thead><tr><th>占有率</th><th>配当</th><th>評判</th><th>機縁</th><th>次Lv必要金額</th><th>累計必要金額</th></tr></thead><tbody>`;
   data.forEach(item => {
-    const estClass = item.isEstimated ? 'class="estimated"' : '';
-    const badge = item.isEstimated ? '<span class="badge-estimated">補完</span>' : '';
-    html += `<tr ${estClass}><td>${item.percent}${badge}</td><td>${item.dividend}</td><td>${item.reputation}</td><td>${item.kizen}</td><td>${item.cost}</td><td>${item.totalCost}</td></tr>`;
+    html += `<tr><td>${item.percent}</td><td>${item.dividend}</td><td>${item.reputation}</td><td>${item.kizen}</td><td>${item.cost}</td><td>${item.totalCost}</td></tr>`;
   });
   html += `</tbody></table>`;
   container.innerHTML = html;
@@ -56,9 +40,17 @@ function renderCountyTable(data) {
   const container = document.getElementById('county-table-container');
   let html = `<table><thead><tr><th>占有率</th><th>配当</th><th>評判</th><th>機縁</th><th>次Lv必要金額</th></tr></thead><tbody>`;
   data.forEach(item => {
-    const estClass = item.isEstimated ? 'class="estimated"' : '';
-    const badge = item.isEstimated ? '<span class="badge-estimated">補完</span>' : '';
-    html += `<tr ${estClass}><td>${item.percent}${badge}</td><td>${item.dividend}</td><td>${item.reputation}</td><td>${item.kizen}</td><td>${item.cost}</td></tr>`;
+    html += `<tr><td>${item.percent}</td><td>${item.dividend}</td><td>${item.reputation}</td><td>${item.kizen}</td><td>${item.cost}</td></tr>`;
+  });
+  html += `</tbody></table>`;
+  container.innerHTML = html;
+}
+
+function renderStateTable(data) {
+  const container = document.getElementById('state-table-container');
+  let html = `<table><thead><tr><th>占有率</th><th>配当</th><th>評判</th><th>機縁</th><th>次Lv必要金額</th><th>累計必要金額</th></tr></thead><tbody>`;
+  data.forEach(item => {
+    html += `<tr><td>${item.percent}</td><td>${item.dividend}</td><td>${item.reputation}</td><td>${item.kizen}</td><td>${item.cost}</td><td>${item.totalCost}</td></tr>`;
   });
   html += `</tbody></table>`;
   container.innerHTML = html;
@@ -78,9 +70,7 @@ function renderVehicleTables(upgradeData, modData) {
   const upgradeContainer = document.getElementById('vehicle-upgrade-table');
   let upHtml = `<table><thead><tr><th>Lv</th><th>価格</th><th>🛞 轅</th><th>🔩 車軸</th><th>📥 荷台</th><th>🏳️ 旗</th></tr></thead><tbody>`;
   upgradeData.forEach(item => {
-    const estClass = item.isEstimated ? 'class="estimated"' : '';
-    const badge = item.isEstimated ? '<span class="badge-estimated">補完</span>' : '';
-    upHtml += `<tr ${estClass}><td>Lv ${item.lv}${badge}</td><td>${item.cost}</td><td>${item.en}</td><td>${item.jiku}</td><td>${item.nibako}</td><td>${item.hata}</td></tr>`;
+    upHtml += `<tr><td>Lv ${item.lv}</td><td>${item.cost}</td><td>${item.en}</td><td>${item.jiku}</td><td>${item.nibako}</td><td>${item.hata}</td></tr>`;
   });
   upHtml += `</tbody></table>`;
   upgradeContainer.innerHTML = upHtml;
