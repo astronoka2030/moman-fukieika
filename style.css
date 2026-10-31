@@ -6,8 +6,6 @@
   --active-tab-bg: #3498db;
   --active-tab-text: #ffffff;
   --border-color: #e2e8f0;
-  --estimated-bg: #fffde7;
-  --estimated-badge: #e67e22;
 }
 
 body {
@@ -89,19 +87,6 @@ th {
 
 tr:hover {
   background-color: #f1f5f9;
-}
-
-tr.estimated {
-  background-color: var(--estimated-bg);
-}
-
-.badge-estimated {
-  font-size: 0.75rem;
-  background-color: var(--estimated-badge);
-  color: white;
-  padding: 2px 6px;
-  border-radius: 4px;
-  margin-left: 6px;
 }
 
 .sub-title {
