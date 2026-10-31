@@ -2,7 +2,8 @@
   --bg-color: #f4f6f8;
   --card-bg: #ffffff;
   --text-color: #333333;
-  --accent-color: #2c3e50;
+  --header-bg: #233142; /* 画像の見出しのグレー・ネイビー色 */
+  --header-text: #ffffff;
   --active-tab-bg: #3498db;
   --active-tab-text: #ffffff;
   --border-color: #e2e8f0;
@@ -23,7 +24,7 @@ body {
 
 h1 {
   text-align: center;
-  color: var(--accent-color);
+  color: var(--header-bg);
   margin-bottom: 20px;
 }
 
@@ -69,30 +70,45 @@ h1 {
 
 table {
   width: 100%;
-  border-collapse: collapse;
+  border-collapse: separate;
+  border-spacing: 0;
   margin-top: 10px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  overflow: hidden;
 }
 
 th, td {
-  padding: 10px 12px;
-  text-align: left;
+  padding: 12px 10px;
+  text-align: center;
   border-bottom: 1px solid var(--border-color);
+  border-right: 1px solid var(--border-color);
 }
 
+th:last-child, td:last-child {
+  border-right: none;
+}
+
+/* 画像のようなダークグレーの見出しスタイル */
 th {
-  background-color: #f8f9fa;
-  font-weight: 600;
-  color: var(--accent-color);
+  background-color: var(--header-bg);
+  color: var(--header-text);
+  font-weight: bold;
+  font-size: 0.95rem;
+}
+
+tr:last-child td {
+  border-bottom: none;
 }
 
 tr:hover {
-  background-color: #f1f5f9;
+  background-color: #f8fafc;
 }
 
 .sub-title {
   margin-top: 25px;
   margin-bottom: 10px;
-  color: var(--accent-color);
+  color: var(--header-bg);
   border-bottom: 2px solid var(--active-tab-bg);
   padding-bottom: 4px;
 }
