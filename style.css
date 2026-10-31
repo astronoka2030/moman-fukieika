@@ -1,0 +1,124 @@
+:root {
+  --bg-color: #f4f6f8;
+  --card-bg: #ffffff;
+  --text-color: #333333;
+  --accent-color: #2c3e50;
+  --active-tab-bg: #3498db;
+  --active-tab-text: #ffffff;
+  --border-color: #e2e8f0;
+  --estimated-bg: #fffde7;
+  --estimated-badge: #e67e22;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  margin: 0;
+  padding: 20px;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+h1 {
+  text-align: center;
+  color: var(--accent-color);
+  margin-bottom: 20px;
+}
+
+.tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 20px;
+  justify-content: center;
+}
+
+.tab-button {
+  padding: 10px 18px;
+  border: 1px solid var(--border-color);
+  background-color: var(--card-bg);
+  cursor: pointer;
+  border-radius: 6px;
+  font-weight: bold;
+  transition: all 0.2s ease;
+}
+
+.tab-button:hover {
+  background-color: #e9ecef;
+}
+
+.tab-button.active {
+  background-color: var(--active-tab-bg);
+  color: var(--active-tab-text);
+  border-color: var(--active-tab-bg);
+}
+
+.content-section {
+  display: none;
+  background-color: var(--card-bg);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.content-section.active {
+  display: block;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+th, td {
+  padding: 10px 12px;
+  text-align: left;
+  border-bottom: 1px solid var(--border-color);
+}
+
+th {
+  background-color: #f8f9fa;
+  font-weight: 600;
+  color: var(--accent-color);
+}
+
+tr:hover {
+  background-color: #f1f5f9;
+}
+
+tr.estimated {
+  background-color: var(--estimated-bg);
+}
+
+.badge-estimated {
+  font-size: 0.75rem;
+  background-color: var(--estimated-badge);
+  color: white;
+  padding: 2px 6px;
+  border-radius: 4px;
+  margin-left: 6px;
+}
+
+.sub-title {
+  margin-top: 25px;
+  margin-bottom: 10px;
+  color: var(--accent-color);
+  border-bottom: 2px solid var(--active-tab-bg);
+  padding-bottom: 4px;
+}
+
+@media (max-width: 600px) {
+  th, td {
+    padding: 8px 6px;
+    font-size: 0.85rem;
+  }
+  .tab-button {
+    padding: 8px 12px;
+    font-size: 0.9rem;
+  }
+}
