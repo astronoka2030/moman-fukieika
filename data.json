@@ -125,7 +125,8 @@
     {"percent": "36%", "dividend": "7.50万", "reputation": "1080", "kizen": "1040", "cost": "1600万"},
     {"percent": "37%", "dividend": "7.68万", "reputation": "1110", "kizen": "1080", "cost": "1660万"},
     {"percent": "38%", "dividend": "7.86万", "reputation": "1140", "kizen": "1120", "cost": "2020万"},
-    {"percent": "39%", "dividend": "8.04万", "reputation": "1170", "kizen": "1160", "cost": "1980万"}
+    {"percent": "39%", "dividend": "8.04万", "reputation": "1170", "kizen": "1160", "cost": "1980万"},
+    {"percent": "40%", "dividend": "8.22万", "reputation": "1200", "kizen": "1200", "cost": "2400万"}
   ],
   "titleData": [
     {"rank": "路", "title": "路の商人", "asset": "不明", "reputation": "不明", "unlock": ""},
