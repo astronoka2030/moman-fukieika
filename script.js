@@ -58,9 +58,9 @@ function renderStateTable(data) {
 
 function renderTitleTable(data) {
   const container = document.getElementById('title-table-container');
-  let html = `<table><thead><tr><th>分類</th><th>称号</th><th>必要総資産</th><th>必要総評判</th><th>解放要素</th></tr></thead><tbody>`;
+  let html = `<table><thead><tr><th>称号</th><th>必要総資産</th><th>必要総評判</th><th>解放要素</th></tr></thead><tbody>`;
   data.forEach(item => {
-    html += `<tr><td>${item.rank}</td><td>${item.title}</td><td>${item.asset}</td><td>${item.reputation}</td><td>${item.unlock}</td></tr>`;
+    html += `<tr><td>${item.title}</td><td>${item.asset}</td><td>${item.reputation}</td><td>${item.unlock}</td></tr>`;
   });
   html += `</tbody></table>`;
   container.innerHTML = html;
